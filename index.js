@@ -9,7 +9,7 @@ const productsRoutes=require('./routes/productsRoute')
 const path=require('path')
 const app=express()
 
-const PORT=4000;
+const PORT=process.env.PORT || 4000;
 
 app.use(bodyParser.json());
 
@@ -32,6 +32,6 @@ app.listen(PORT,()=>{
     console.log(`SERVER STARTED AND RUNNING AT ${PORT}`)
 })
 
-app.use('/home',(req,res)=>{
-    res.send("<h1>Heloo</h1>")
+app.use('/',(req,res)=>{
+    res.send("<h1>Welcome To SHUBY </h1>")
 })
