@@ -6,6 +6,7 @@ const vendorRoutes=require('./routes/vendorRoute')
 const bodyParser=require('body-parser')
 const firmroutes=require('./routes/firmroutes')
 const productsRoutes=require('./routes/productsRoute')
+const cors=require('cors')
 const path=require('path')
 const app=express()
 
@@ -13,8 +14,8 @@ const PORT=process.env.PORT || 4000;
 
 app.use(bodyParser.json());
 
-
 dotenv.config();
+app.use(cors());
 
 app.use('/vendor',vendorRoutes);
 app.use('/firm',firmroutes)
